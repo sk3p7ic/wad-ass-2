@@ -1,0 +1,11 @@
+#output {
+  --bs-bg-opacity: 0.5;
+}
+
+#previous-expression,
+#current-expression {
+  top: 0;
+  right: 0;
+  margin-left: auto;
+  width: fit-content;
+}

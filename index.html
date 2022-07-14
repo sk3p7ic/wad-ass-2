@@ -31,7 +31,49 @@
     <div
       class="container-lg min-vh-100 d-flex flex-column justify-content-center"
     >
-      <div class="mx-auto">Hello world!</div>
+      <div
+        id="calculator-container"
+        class="mx-auto d-flex flex-column border border-2 border-dark rounded text-light"
+      >
+        <div id="output" class="p-2 bg-dark">
+          <div id="previous-expression" class="position-relative">
+            <h2 class="display-6">Foo bar.</h2>
+          </div>
+          <div id="current-expression">
+            <h1 class="display-2">Lorem ipsum.</h1>
+          </div>
+        </div>
+        <div id="calc-keys" class="p-4 bg-dark row row-cols-4 mx-0">
+          <div class="col d-flex flex-column gap-3">
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+            <button class="btn btn-primary">AC</button>
+          </div>
+          <div class="col d-flex flex-column gap-3">
+            <button class="btn btn-primary">/</button>
+            <button class="btn btn-primary">*</button>
+            <button class="btn btn-primary">-</button>
+            <button class="btn btn-primary">+</button>
+            <button class="btn btn-primary">=</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
