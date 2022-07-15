@@ -51,9 +51,10 @@ export const addEqualsKeyboardEventListener = (
       prevDisplay.innerHTML != _blankValue &&
       currDisplay.innerHTML != _blankValue
     ) {
-      callback(`${prevDisplay.innerHTML} ${currDisplay.innerHTML}`);
+      const expr = `${prevDisplay.innerHTML} ${currDisplay.innerHTML}`;
       currDisplay.innerHTML = _blankValue;
       prevDisplay.innerHTML = _blankValue;
+      callback(expr);
     }
   });
 };
