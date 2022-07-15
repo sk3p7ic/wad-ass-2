@@ -17,8 +17,12 @@ const _standardKeydownHandler = (key, display) => {
 
 const _operatorKeydownHandler = (key, prevDisplay, currDisplay) => {
   if (_operatorKeys.includes(key.key)) {
-    prevDisplay.innerHTML = `${currDisplay.innerHTML} ${key.key}`;
-    currDisplay.innerHTML = _blankValue;
+    if (currDisplay.innerHTML === _blankValue && key.key === "-") {
+      currDisplay.innerHTML = "-";
+    } else {
+      prevDisplay.innerHTML = `${currDisplay.innerHTML} ${key.key}`;
+      currDisplay.innerHTML = _blankValue;
+    }
   } else if (key.key.toLowerCase() === "c") {
     prevDisplay.innerHTML = _blankValue;
   }
@@ -34,4 +38,22 @@ export const addRestrictedKeyboardTypingListener = (
   window.addEventListener("keydown", (key) =>
     _operatorKeydownHandler(key, prevDisplay, currentDisplay)
   );
+};
+
+export const addEqualsKeyboardEventListener = (
+  currDisplay,
+  prevDisplay,
+  callback
+) => {
+  window.addEventListener("keydown", (key) => {
+    if (
+      (key.key === "=" || key.key === "Enter") &&
+      prevDisplay.innerHTML != _blankValue &&
+      currDisplay.innerHTML != _blankValue
+    ) {
+      callback(`${prevDisplay.innerHTML} ${currDisplay.innerHTML}`);
+      currDisplay.innerHTML = _blankValue;
+      prevDisplay.innerHTML = _blankValue;
+    }
+  });
 };
