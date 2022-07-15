@@ -8,7 +8,7 @@ This assignment is to create a basic calculator website using JavaScript.
 
 This website must support the following functions:
 
-- [ ] +, -, \*, /, =
-- [ ] `C` for Clear
-- [ ] 0, 1, ..., 9, +/-
-- [ ] At least one other operator, such as % or ^
+- [X] +, -, \*, /, =
+- [X] `C` for Clear
+- [X] 0, 1, ..., 9, +/-
+- [X] At least one other operator, such as % or ^
