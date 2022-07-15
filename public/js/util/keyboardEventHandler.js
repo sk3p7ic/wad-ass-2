@@ -12,6 +12,13 @@ const _standardKeydownHandler = (key, display) => {
       currentContent != "0" ? `${currentContent}${key.key}` : `${key.key}`;
   } else if (key.key.toLowerCase() === "c") {
     display.innerHTML = _blankValue;
+  } else if (key.key === "Backspace") {
+    const currentContent = display.innerHTML;
+    var newContent = currentContent.substr(0, currentContent.length - 1);
+    if (newContent.length == 0) {
+      newContent = _blankValue;
+    }
+    display.innerHTML = newContent;
   }
 };
 
