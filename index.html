@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/main.css" />
     <!-- Personal JS -->
     <!-- Main calculator control file -->
-    <script src="public/js/calculator.js" defer></script>
+    <script src="public/js/calculator.js" type="module" defer></script>
   </head>
   <body class="bg-light">
     <div
@@ -41,12 +41,8 @@
         class="mx-auto d-flex flex-column border border-2 border-dark rounded text-light"
       >
         <div id="output" class="p-2 bg-dark">
-          <div id="previous-expression" class="position-relative">
-            <h2 class="display-6">Foo bar.</h2>
-          </div>
-          <div id="current-expression">
-            <h1 class="display-2">Lorem ipsum.</h1>
-          </div>
+          <div id="previous-expression" class="display-6">0</div>
+          <div id="current-expression" class="display-2">0</div>
         </div>
         <div id="calc-keys" class="p-4 bg-dark row row-cols-4 mx-0">
           <div class="col d-flex flex-column gap-3">
