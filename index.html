@@ -31,6 +31,7 @@
     <!-- Personal JS -->
     <!-- Main calculator control file -->
     <script src="public/js/calculator.js" type="module" defer></script>
+    <script src="public/js/util/keySimulator.js"></script>
   </head>
   <body class="bg-light">
     <div
@@ -46,70 +47,80 @@
         </div>
         <div id="calc-keys" class="p-4 bg-dark row row-cols-4 mx-0">
           <div class="col d-flex flex-column gap-3">
-            <button class="btn btn-outline-primary">
+            <button
+              class="btn btn-outline-primary"
+              onclick="keySimulator('c');"
+            >
               <i class="fa-solid fa-c"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('7');">
               <i class="fa-solid fa-7"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('4');">
               <i class="fa-solid fa-4"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('1');">
               <i class="fa-solid fa-1"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('0');">
               <i class="fa-solid fa-0"></i>
             </button>
           </div>
           <div class="col d-flex flex-column gap-3">
-            <button class="btn btn-outline-primary">
+            <button
+              class="btn btn-outline-primary"
+              onclick="keySimulator('-');"
+            >
               <i class="fa-solid fa-plus-minus"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('8');">
               <i class="fa-solid fa-8"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('5');">
               <i class="fa-solid fa-5"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('2');">
               <i class="fa-solid fa-2"></i>
             </button>
-            <button class="btn btn-secondary" style="font-weight: 800">
+            <button
+              class="btn btn-secondary"
+              style="font-weight: 800"
+              onclick="keySimulator('.');"
+            >
               .
             </button>
           </div>
           <div class="col d-flex flex-column gap-3">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('%');">
               <i class="fa-solid fa-percent"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('9');">
               <i class="fa-solid fa-9"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('6');">
               <i class="fa-solid fa-6"></i>
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" onclick="keySimulator('3');">
               <i class="fa-solid fa-3"></i>
             </button>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('^');">
               <i class="fa-solid fa-superscript"></i>
             </button>
           </div>
           <div class="col d-flex flex-column gap-3">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('/');">
               <i class="fa-solid fa-divide"></i>
             </button>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('*');">
               <i class="fa-solid fa-multiply"></i>
             </button>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('-');">
               <i class="fa-solid fa-minus"></i>
             </button>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" onclick="keySimulator('+');">
               <i class="fa-solid fa-plus"></i>
             </button>
-            <button class="btn btn-success">
+            <button class="btn btn-success" onclick="keySimulator('=');">
               <i class="fa-solid fa-equals"></i>
             </button>
           </div>
