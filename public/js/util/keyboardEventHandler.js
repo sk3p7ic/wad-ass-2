@@ -19,7 +19,7 @@ const _standardKeydownHandler = (key, display) => {
   } else if (key.key === "Backspace") {
     // If the user attempts to delete the last-entered character
     const currentContent = display.innerHTML;
-    var newContent = currentContent.substr(0, currentContent.length - 1);
+    let newContent = currentContent.substr(0, currentContent.length - 1);
     if (newContent.length == 0) {
       newContent = _blankValue;
     }
