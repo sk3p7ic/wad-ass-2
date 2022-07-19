@@ -1,11 +1,13 @@
 import {
   addEqualsKeyboardEventListener,
   addRestrictedKeyboardTypingListener,
+  addButtonKeyEventListener,
 } from "./util/keyboardEventHandler.js";
 
-// Define constants for display elements
+// Define constants for elements
 const prevExprDisp = document.querySelector("#previous-expression");
 const currExprDisp = document.querySelector("#current-expression");
+const calcButtons = document.querySelectorAll("#calc-keys button"); // Stores the buttons for all keys
 
 /**
  * Evaluates a given expression and displays the output.
@@ -47,6 +49,18 @@ const _startEvaluation = (expr) => {
   }
 };
 
+/**
+ * Checks if a key matching a given button was pressed and toggles the `active` class on the relevant button if it was.
+ * @param {string} char The character / key that was pressed
+ */
+const _toggleButtonActiveState = (char) => {
+  if (char === "enter") char = "="; // Replace Enter key with equals key
+  calcButtons.forEach((elem) => {
+    if (elem.dataset.keyvalue === char) elem.classList.toggle("active");
+  });
+};
+
 // Add the listeners for the keyboard events
 addRestrictedKeyboardTypingListener(currExprDisp, prevExprDisp);
 addEqualsKeyboardEventListener(currExprDisp, prevExprDisp, _startEvaluation);
+addButtonKeyEventListener(_toggleButtonActiveState);

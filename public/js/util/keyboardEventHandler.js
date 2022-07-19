@@ -105,3 +105,12 @@ export const addEqualsKeyboardEventListener = (
     }
   });
 };
+
+/**
+ * Handles keypresses to hopefully match them to a button press.
+ * @param {(string) => void} callback Callback function for handling when a key that matches a button is pressed.
+ */
+export const addButtonKeyEventListener = (callback) => {
+  window.addEventListener("keydown", (key) => callback(key.key.toLowerCase()));
+  window.addEventListener("keyup", (key) => callback(key.key.toLowerCase()));
+};
