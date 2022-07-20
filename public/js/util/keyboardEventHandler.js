@@ -1,6 +1,6 @@
 const _blankValue = "0"; // The default value to display when the screen is cleared
 const _allowedKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; // Valid basic inputs
-const _operatorKeys = ["+", "-", "*", "/", "%", "^"]; // Valid operand inputs
+const _operatorKeys = ["+", "-", "*", "/", "^"]; // Valid operand inputs
 
 /**
  * Handles KeyboardEvents for numbers.
@@ -77,6 +77,10 @@ export const addRestrictedKeyboardTypingListener = (
   window.addEventListener("keydown", (key) =>
     _clearScreenKeydownHandler(key, prevDisplay, currentDisplay)
   );
+  window.addEventListener("keydown", (key) => {
+    if (key.key === "%")
+      currentDisplay.innerHTML = parseFloat(currentDisplay.innerHTML) / 100;
+  });
 };
 
 /**

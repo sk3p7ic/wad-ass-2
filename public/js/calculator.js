@@ -39,10 +39,6 @@ const _startEvaluation = (expr) => {
       result = parseFloat(value1) / parseFloat(value2);
       currExprDisp.innerHTML = result;
       break;
-    case "%":
-      result = parseFloat(value1) % parseFloat(value2);
-      currExprDisp.innerHTML = result;
-      break;
     case "^":
       result = Math.pow(parseFloat(value1), parseFloat(value2));
       currExprDisp.innerHTML = result;
