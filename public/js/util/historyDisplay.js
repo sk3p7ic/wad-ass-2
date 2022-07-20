@@ -10,8 +10,10 @@ const _renderHistory = () => {
   itemsContainer.innerHTML = ""; // Reset the contents of the container
   for (const [expression, result] of Object.entries(history)) {
     let btn = document.createElement("button");
-    btn.onclick = () =>
-      (document.querySelector("#current-expression").innerHTML = result);
+    btn.onclick = () => {
+      document.querySelector("#current-expression").innerHTML = result;
+      document.querySelector("#previous-expression").innerHTML = expression;
+    };
     btn.classList.add(
       "btn",
       "btn-sm",
