@@ -48,8 +48,12 @@
           <div id="previous-expression" class="display-6">0</div>
           <div id="current-expression" class="display-2">0</div>
         </div>
-        <div id="history" class="p-2 bg-secondary">
+        <div id="history" class="p-2 bg-secondary overflow-hidden">
           <h5>History</h5>
+          <div
+            id="history-items"
+            class="h-75 p-2 d-flex flex-column gap-1 overflow-auto"
+          ></div>
         </div>
         <div class="p-4 bg-dark d-flex flex-column gap-4">
           <button id="history-btn" class="mx-4 btn btn-outline-info">

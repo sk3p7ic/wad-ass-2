@@ -2,6 +2,10 @@
   --bs-bg-opacity: 0.5;
 }
 
+#history-items button > p {
+  margin: 0 !important;
+}
+
 #previous-expression,
 #current-expression {
   top: 0;
