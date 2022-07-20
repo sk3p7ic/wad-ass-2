@@ -1,10 +1,14 @@
+// Define constants for getting elements
 const outputDisp = document.querySelector("#output");
 const historyDiv = document.querySelector("#history");
 const historyBtn = document.querySelector("#history-btn");
 
-let showHistory = false;
-let history = {};
+let showHistory = false; // Whether the history is being shown
+let history = {}; // An object of all the history
 
+/**
+ * Renders the calculator's expression history to the user.
+ */
 const _renderHistory = () => {
   const itemsContainer = historyDiv.querySelector("#history-items");
   itemsContainer.innerHTML = ""; // Reset the contents of the container
@@ -33,6 +37,9 @@ const _renderHistory = () => {
   }
 };
 
+/**
+ * Toggles whether to display the history or the normal output displays to the user.
+ */
 const _toggleShowHistory = () => {
   showHistory = !showHistory; // Toggle the history
   const outputHeight = outputDisp.getBoundingClientRect().height;
@@ -43,11 +50,19 @@ const _toggleShowHistory = () => {
   _renderHistory();
 };
 
+/**
+ * Sets up / initializes the "History" button and adds its onclick listener.
+ */
 export const setupHistoryButton = () => {
   if (!showHistory) historyDiv.classList.add("d-none");
   historyBtn.onclick = _toggleShowHistory;
 };
 
+/**
+ * Adds a new history item to the calculator's history.
+ * @param {string} expression The expression that was evaluated.
+ * @param {number} result The result of the evaluation.
+ */
 export const updateHistory = (expression, result) => {
   history = { ...history, [expression]: result };
 };
