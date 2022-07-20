@@ -14,7 +14,9 @@ const _renderHistory = () => {
       (document.querySelector("#current-expression").innerHTML = result);
     btn.classList.add(
       "btn",
-      "btn-primary",
+      "btn-sm",
+      "btn-light",
+      "text-dark",
       "d-flex",
       "flex-row",
       "justify-content-between"
