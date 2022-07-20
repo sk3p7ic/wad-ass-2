@@ -4,11 +4,14 @@ import {
   addButtonKeyEventListener,
 } from "./util/keyboardEventHandler.js";
 import { setupHistoryButton, updateHistory } from "./util/historyDisplay.js";
+import { setupKeySimulator } from "./util/keySimulator.js";
 
 // Define constants for elements
 const prevExprDisp = document.querySelector("#previous-expression");
 const currExprDisp = document.querySelector("#current-expression");
-const calcButtons = document.querySelectorAll("#calc-keys div button"); // Stores the buttons for all keys
+const calcButtons = document.querySelectorAll(
+  "#calc-keys div button[data-keyvalue]"
+); // Stores the buttons for all keys
 
 /**
  * Evaluates a given expression and displays the output.
@@ -63,3 +66,4 @@ addRestrictedKeyboardTypingListener(currExprDisp, prevExprDisp);
 addEqualsKeyboardEventListener(currExprDisp, prevExprDisp, _startEvaluation);
 addButtonKeyEventListener(_toggleButtonActiveState);
 setupHistoryButton();
+setupKeySimulator(calcButtons);
