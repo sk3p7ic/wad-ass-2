@@ -3,11 +3,15 @@ import {
   addRestrictedKeyboardTypingListener,
   addButtonKeyEventListener,
 } from "./util/keyboardEventHandler.js";
+import { setupHistoryButton } from "./util/historyDisplay.js";
 
 // Define constants for elements
 const prevExprDisp = document.querySelector("#previous-expression");
 const currExprDisp = document.querySelector("#current-expression");
-const calcButtons = document.querySelectorAll("#calc-keys button"); // Stores the buttons for all keys
+const calcButtons = document.querySelectorAll("#calc-keys div button"); // Stores the buttons for all keys
+
+// Used to store the calculator's history with the key of the expression and value of the result
+let exprHistory = {};
 
 /**
  * Evaluates a given expression and displays the output.
@@ -47,6 +51,7 @@ const _startEvaluation = (expr) => {
       currExprDisp.innerHTML = result;
       break;
   }
+  exprHistory = { ...exprHistory, [expr]: result }; // Add the expression and result to history
 };
 
 /**
@@ -64,3 +69,4 @@ const _toggleButtonActiveState = (char) => {
 addRestrictedKeyboardTypingListener(currExprDisp, prevExprDisp);
 addEqualsKeyboardEventListener(currExprDisp, prevExprDisp, _startEvaluation);
 addButtonKeyEventListener(_toggleButtonActiveState);
+setupHistoryButton();
