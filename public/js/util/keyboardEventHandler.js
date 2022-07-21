@@ -19,7 +19,7 @@ const _standardKeydownHandler = (key, display) => {
   } else if (key.key === "Backspace") {
     // If the user attempts to delete the last-entered character
     const currentContent = display.innerHTML;
-    let newContent = currentContent.substr(0, currentContent.length - 1);
+    let newContent = currentContent.substring(0, currentContent.length - 1);
     if (newContent.length == 0) {
       newContent = _blankValue;
     }
@@ -40,7 +40,7 @@ const _operatorKeydownHandler = (key, prevDisplay, currDisplay) => {
     if (currDisplay.innerHTML === _blankValue && key.key === "-") {
       currDisplay.innerHTML = "-";
     } else {
-      prevDisplay.innerHTML = `${currDisplay.innerHTML} ${key.key}`;
+      prevDisplay.innerHTML += `${currDisplay.innerHTML} ${key.key}`;
       currDisplay.innerHTML = _blankValue;
     }
   }
