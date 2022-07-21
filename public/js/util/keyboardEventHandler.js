@@ -40,7 +40,7 @@ const _operatorKeydownHandler = (key, prevDisplay, currDisplay) => {
     if (currDisplay.innerHTML === _blankValue && key.key === "-") {
       currDisplay.innerHTML = "-";
     } else {
-      prevDisplay.innerHTML += `${currDisplay.innerHTML} ${key.key}`;
+      prevDisplay.innerHTML = `${currDisplay.innerHTML} ${key.key}`;
       currDisplay.innerHTML = _blankValue;
     }
   }
